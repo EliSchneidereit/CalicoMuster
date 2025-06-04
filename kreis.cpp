@@ -4,6 +4,7 @@
 
 using namespace std;
 
+// Dies ist die Main-Funktion
 int main (int argc, char* argv []) 
 {
   if (argc !=6)
