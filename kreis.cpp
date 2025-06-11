@@ -4,6 +4,12 @@
 
 using namespace std;
 
+
+inline double round_to(const double& x, const double& r)
+{
+  return static_cast<double>(std::round(x / r)) * r;
+}
+
 // Dies ist die Main-Funktion
 int main (int argc, char* argv []) 
 {
@@ -35,10 +41,10 @@ int main (int argc, char* argv [])
   for (int k=0; k<N; ++k)
   {
     x = k*dx;
-    double am = aussen_m(x);
-    double im = innen_m(x);
-    double ip = innen_p(x);
-    double ap = aussen_p(x);
+    double am = round_to(aussen_m(x), 0.05);
+    double im = round_to(innen_m(x) , 0.05);
+    double ip = round_to(innen_p(x) , 0.05);
+    double ap = round_to(aussen_p(x), 0.05);
     points << x << " " << am << " " << im << " " << ip << " " << ap << std::endl;
     cuts << k << " ";
     if (ap == 0)
