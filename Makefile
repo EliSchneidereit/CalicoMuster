@@ -6,4 +6,7 @@ plot : cuts.dat
 
 all : kreis.exe
 
+clean :
+	rm *.dat *.png
+
 .PHONY : plot
